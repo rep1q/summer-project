@@ -22,8 +22,8 @@ function App() {
     return (
     <body>
       <div>
-        <Canvas image = {image} processImage={FirstFilter} />
-        <Canvas image = {image} processImage={SecondFilter}/>
+        <li><Canvas image = {image} processImage={FirstFilter} /><h2>Filter 1</h2></li>
+        <li><Canvas image = {image} processImage={SecondFilter}/><h2>Filter 2</h2></li>
       </div>
     </body>
   );

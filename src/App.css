@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+li{
+  padding: 20px;
+  display: inline-block;
+}
+
+.TableFoto{
+  border: 5px dashed #282c34;
+}
+
+button{
+  background-color: #282c34;
+  font-style: oblique;
+  border: 0px;
+  margin: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  height: 100%;
+}
+button:hover{
+  background-color: #1A1C21FF;
+  cursor: crosshair;
+}
+p{
+  display: flex;
+  text-align: center;
+  margin: 0px;
+}
+
+body{
+  background-color: dimgray;
+}
+
+h2{
+  font-style: oblique;
+  text-align: center;
+}
