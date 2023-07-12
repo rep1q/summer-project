@@ -1,5 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import Canvas from "./Canvas";
+import image from "./picture.jpeg"
+import {FirFilter} from "./Filters/FilterFirst";
+import {SecFilter} from "./Filters/FilterSecond";
+
 
 function App() {
   const onBtnClick = ()=>{
@@ -7,22 +11,20 @@ function App() {
       console.log("Click")
   }
 
+  const FirstFilter =(imageData)=>{
+    return FirFilter(imageData)
+  }
 
-  const image = document.getElementById("image");
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = image.width;
-  canvas.height = image.height;
+  const SecondFilter =(imageData)=>{
+    return SecFilter(imageData)
+  }
 
     return (
     <body>
       <div>
-      <img src={"../logo192.png"} id={"image"} className={"image"}/>
-          <canvas id={"canvas"} className={"canvas"}>
-              Your browser does not support JS or HTML5!
-          </canvas>
+        <Canvas image = {image} processImage={FirstFilter} />
+        <Canvas image = {image} processImage={SecondFilter}/>
       </div>
-      <button id={"btn"} onClick={onBtnClick}>Обработка фото</button>
     </body>
   );
 }
