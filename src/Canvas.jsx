@@ -1,4 +1,6 @@
 import {useEffect, useRef, useState} from "react";
+import {ReactCompareSlider, ReactCompareSliderImage} from "react-compare-slider";
+import img from "./picture.jpg"
 
 const Canvas = (props) => {
   const widthPhoto = 650;
@@ -13,17 +15,20 @@ const Canvas = (props) => {
       const image = new Image()
       image.onload = function () {
         canvas.drawImage(image, 0, 0);
+        setImage(canvas.getImageData(0,0,widthPhoto,widthPhoto))
       };
       image.src = props.image
     }
   }, [])
     const ShowSlider = props.showSlider;
+
+  const [image,setImage]=useState(null)
+  const [newImage,setNewImage]=useState(null)
   const onProcessClick = () => {
     const canvas = canvasRef.current.getContext('2d')
-    const image = canvas.getImageData(0, 0, widthPhoto, widthPhoto)
-    const newImage = props.processImage(image,inputValue);
-
-    canvas.putImageData(newImage, 0, 0);
+    const newImageProcessed = props.processImage(image,inputValue);
+    setNewImage(newImageProcessed)
+    canvas.putImageData(newImageProcessed, 0, 0);
   }
 
   const onChangeValue = (event) => {
@@ -34,9 +39,25 @@ const Canvas = (props) => {
       console.log("input: ", inputValue)
   },[inputValue])
 
+  function imagedata_to_image(imaged) {
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = imaged.width;
+    canvas.height = imaged.height;
+    ctx.putImageData(imaged, 0, 0);
+
+    var img = new Image();
+    img.src = canvas.toDataURL();
+    return img;
+  }
+
   return (
     <div className={"TableFoto"}>
-      <canvas ref={canvasRef} width={widthPhoto} height={widthPhoto}/>
+      {newImage ?<ReactCompareSlider
+          itemOne={<ReactCompareSliderImage src={img}/>}
+          itemTwo={<ReactCompareSliderImage src={imagedata_to_image(newImage).src}/>}
+      />:<canvas ref={canvasRef} width={widthPhoto} height={widthPhoto}/>
+      }
         {props.showSlider&&<p>Filter settings:</p>}
         {!props.showSlider&&<h3>!No Filters Settings Found!</h3>}
       <div>

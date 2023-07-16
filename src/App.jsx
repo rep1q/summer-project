@@ -1,9 +1,10 @@
 import './App.css';
 import Canvas from "./Canvas";
-import image from "./picture.jpeg"
+import image from "./picture.jpg"
 import logo from "./prac.png"
 import {FirFilter} from "./Filters/FilterFirst";
 import {SecFilter} from "./Filters/FilterSecond";
+import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   }
 
   const SecondFilter =(imageData, inputValue)=>{
-    return SecFilter(imageData, inputValue)
+    return SecFilter(imageData,inputValue)
   }
 
     return (
