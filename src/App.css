@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -35,4 +35,127 @@
   to {
     transform: rotate(360deg);
   }
+}
+li{
+  display: inline-block;
+}
+
+.canvas{
+  margin: 20px;
+}
+
+.TableFoto{
+  border: 5px dashed #282c34;
+}
+
+button{
+  background-color: #282c34;
+  font-style: oblique;
+  border: 0px;
+  margin: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  height: 100%;
+}
+button:hover{
+  background-color: #1A1C21FF;
+  color: lightgray;
+  cursor: crosshair;
+}
+p{
+  display: flex;
+  text-align: center;
+  margin: 0px;
+}
+
+body{
+  background-color: dimgray;
+}
+
+h2{
+  font-style: oblique;
+  text-align: center;
+}
+
+input {
+  margin: 10px;
+}
+/*.inp{*/
+/*  -webkit-appearance: none;*/
+/*  border-radius: 15px;*/
+/*  background: green;*/
+/*}*/
+
+.inp{
+  -webkit-appearance: none;
+  width: 200px;
+  height: 15px;
+  background: #111;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.inp::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: green;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid #333;
+  box-shadow: -203px 0 0 200px green;
+}
+
+h3{
+  color: coral;
+  text-align: center;
+  font-size: 17px;
+}
+
+header{
+  display: flex;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  background-color: #989898;
+  box-shadow: 0px 10px 10px 1px #333333;
+}
+
+footer{
+  background-color: #989898;
+  text-align: center;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -20px;
+  padding: 10px 10px;
+  box-shadow: 0px -10px 10px 1px #333333;
+}
+
+h4{
+  font-style: oblique;
+}
+
+.footer{
+  text-align: left;
+  margin: 0 20px;
+}
+
+a{
+  color:#282c34;
+  text-decoration: none;
+}
+
+a:hover{
+  cursor: crosshair;
+}
+
+#logo1{
+padding-right: 1000px;
+}
+
+#logo2{
+margin-left: 300px;
 }
